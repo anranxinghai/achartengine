@@ -64,6 +64,7 @@ public class AverageTemperatureChart extends AbstractDemoChart {
     for (int i = 0; i < titles.length; i++) {
       x.add(new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 });
     }
+    String[] xLabels = {"一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","廿月"};
     List<double[]> values = new ArrayList<double[]>();
     values.add(new double[] { 12.3, 12.5, 13.8, 16.8, 20.4, 24.4, 26.4, 26.1, 23.6, 20.3, 17.2,
         13.9 });
@@ -83,11 +84,14 @@ public class AverageTemperatureChart extends AbstractDemoChart {
     renderer.setXLabels(12);
     renderer.setYLabels(10);
     renderer.setShowGrid(true);
-    renderer.setXLabelsAlign(Align.RIGHT);
+    renderer.setXLabelsAlign(Align.CENTER);
     renderer.setYLabelsAlign(Align.RIGHT);
     renderer.setZoomButtonsVisible(true);
     renderer.setPanLimits(new double[] { -10, 20, -10, 40 });
     renderer.setZoomLimits(new double[] { -10, 20, -10, 40 });
+    for (int i = 1; i < xLabels.length + 1; i++) {
+      renderer.addXTextLabel(i, xLabels[i-1]);
+    }
 
     XYMultipleSeriesDataset dataset = buildDataset(titles, x, values);
     XYSeries series = dataset.getSeriesAt(0);

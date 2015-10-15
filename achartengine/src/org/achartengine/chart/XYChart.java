@@ -715,12 +715,11 @@ public abstract class XYChart extends AbstractChart {
       if (showLabels) {
         paint.setColor(mRenderer.getXLabelsColor());
         if (showTickMarks) {
-          canvas
-              .drawLine(xLabel, bottom, xLabel, bottom + mRenderer.getLabelsTextSize() / 3, paint);
+//          canvas.drawLine(xLabel, bottom, xLabel, bottom + mRenderer.getLabelsTextSize() / 3, paint);
         }
-        drawText(canvas, getLabel(mRenderer.getXLabelFormat(), label), xLabel,
+        /*drawText(canvas, getLabel(mRenderer.getXLabelFormat(), label), xLabel,
             bottom + mRenderer.getLabelsTextSize() * 4 / 3 + mRenderer.getXLabelsPadding(), paint,
-            mRenderer.getXLabelsAngle());
+            mRenderer.getXLabelsAngle());*/
       }
       if (showGridY) {
         paint.setColor(mRenderer.getGridColor(0));
@@ -764,7 +763,7 @@ public abstract class XYChart extends AbstractChart {
             paint.setColor(mRenderer.getYLabelsColor(i));
             if (axisAlign == Align.LEFT) {
               if (showTickMarks) {
-                canvas.drawLine(left + getLabelLinePos(axisAlign), yLabel, left, yLabel, paint);
+//                canvas.drawLine(left + getLabelLinePos(axisAlign), yLabel, left, yLabel, paint);
               }
               drawText(canvas, getLabel(mRenderer.getYLabelFormat(i), label),
                   left - mRenderer.getYLabelsPadding(),
@@ -830,8 +829,7 @@ public abstract class XYChart extends AbstractChart {
           float xLabel = (float) (left + xPixelsPerUnit * (location.doubleValue() - minX));
           paint.setColor(mRenderer.getXLabelsColor());
           if (showTickMarks) {
-            canvas.drawLine(xLabel, bottom, xLabel, bottom + mRenderer.getLabelsTextSize() / 3,
-                paint);
+//            canvas.drawLine(xLabel, bottom, xLabel, bottom + mRenderer.getLabelsTextSize() / 3,paint);
           }
           drawText(canvas, mRenderer.getXTextLabel(location), xLabel,
               bottom + mRenderer.getLabelsTextSize() * 4 / 3 + mRenderer.getXLabelsPadding(),

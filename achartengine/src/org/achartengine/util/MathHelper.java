@@ -138,8 +138,10 @@ public class MathHelper {
       rval = 10.0;
     } else if (rval > 2.0) {
       rval = 5.0;
-    } else if (rval > 1.0) {
+    } else if (rval > 1.5) {
       rval = 2.0;
+    } else if (rval > 1.0) {
+      rval = 1.5;
     }
     rval *= Math.pow(10, exponent);
     return rval;
